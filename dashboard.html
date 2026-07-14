@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="topbar" id="app-nav"></header>
+
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow" id="date-label">Today</span>
+        <h1 id="welcome-heading">Welcome back</h1>
+        <p id="welcome-sub">Here's your health summary for today.</p>
+      </div>
+      <a href="health-check.html" class="btn btn--primary">+ New daily check-in</a>
+    </div>
+
+    <div id="alert-slot"></div>
+
+    <div class="grid grid--stats" style="margin-bottom:24px;" id="stat-cards">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Recent submissions</h3>
+        <div class="table-wrap">
+          <table id="recent-table">
+            <thead>
+              <tr><th>Date</th><th>Symptoms</th><th>Temp</th><th>SpO₂</th><th>Risk</th></tr>
+            </thead>
+            <tbody id="recent-tbody"></tbody>
+          </table>
+        </div>
+        <div id="recent-empty" class="empty-state" style="display:none;">
+          <div class="empty-state__icon">🩺</div>
+          <p>No check-ins yet. Submit your first daily health report to see it here.</p>
+          <a href="health-check.html" class="btn btn--primary btn--sm">Start check-in</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Current risk status</h3>
+        <div id="risk-panel"></div>
+        <div class="section-divider">
+          <svg viewBox="0 0 300 26" preserveAspectRatio="none"><polyline points="0,13 60,13 75,3 90,23 105,13 300,13" /></svg>
+        </div>
+        <h3 style="font-size:0.95rem;">Quick actions</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="health-check.html" class="btn btn--ghost btn--block">📋 Log today's vitals</a>
+          <a href="history.html" class="btn btn--ghost btn--block">📈 View full history</a>
+          <a href="emergency.html" class="btn btn--ghost btn--block">🚨 Emergency contacts</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer-note">CommunityHealth AI — rule-based risk engine, built to be upgraded to a real ML model.</div>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/outbreak.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Health History · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="topbar" id="app-nav"></header>
+
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Health History</span>
+        <h1>Your past check-ins</h1>
+        <p>Search and filter your submitted reports and prediction history.</p>
+      </div>
+      <a href="health-check.html" class="btn btn--primary">+ New check-in</a>
+    </div>
+
+    <div class="card">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search by symptom or location..." />
+        <select id="risk-filter">
+          <option value="">All risk levels</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <input type="date" id="date-filter" />
+        <button class="btn btn--ghost btn--sm" id="clear-filters">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Location</th><th>Temp</th><th>HR</th><th>SpO₂</th><th>Symptoms</th><th>Risk</th></tr>
+          </thead>
+          <tbody id="history-tbody"></tbody>
+        </table>
+      </div>
+      <div id="history-empty" class="empty-state" style="display:none;">
+        <div class="empty-state__icon">🔍</div>
+        <p>No reports match your filters.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-history.js"></script>
+</body>
+</html>

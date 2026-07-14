@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Account · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-shell__aside">
+    <div class="brand-lockup">
+      <svg width="34" height="20" viewBox="0 0 120 24" style="color:#6FD9CE"><polyline points="0,12 20,12 28,2 36,22 44,12 120,12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      CommunityHealth<strong>AI</strong>
+    </div>
+
+    <div>
+      <div class="aside-pulse">
+        <svg viewBox="0 0 400 90" preserveAspectRatio="none">
+          <polyline points="0,45 60,45 80,10 100,80 120,45 180,45 200,20 220,70 240,45 400,45" />
+        </svg>
+      </div>
+      <p class="aside-quote">Two minutes a day. That's all it takes to give your community an early warning system.</p>
+    </div>
+
+    <div class="aside-foot">
+      Your data stays on this device for this demo · Rule-based AI risk scoring
+    </div>
+  </aside>
+
+  <div class="auth-shell__form">
+    <div class="auth-card">
+      <span class="eyebrow">Get started</span>
+      <h1>Create your account</h1>
+      <p>Join your community's health monitoring network.</p>
+
+      <form id="register-form" novalidate>
+        <div class="field" id="field-name">
+          <label for="name">Full name</label>
+          <input type="text" id="name" placeholder="Asha Verma" autocomplete="name" required />
+          <span class="field-error">Enter your full name.</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field" id="field-age">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="1" max="120" placeholder="27" required />
+            <span class="field-error">Enter a valid age (1–120).</span>
+          </div>
+          <div class="field" id="field-gender">
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+              <option value="">Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+              <option value="prefer_not_to_say">Prefer not to say</option>
+            </select>
+            <span class="field-error">Please select an option.</span>
+          </div>
+        </div>
+
+        <div class="field" id="field-email">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required />
+          <span class="field-error">Enter a valid email address.</span>
+        </div>
+
+        <div class="field" id="field-password">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="At least 8 characters" autocomplete="new-password" required />
+          <small>Use 8+ characters with a mix of letters and numbers.</small>
+          <span class="field-error">Password must be at least 8 characters.</span>
+        </div>
+
+        <div class="field" id="field-confirm">
+          <label for="confirm">Confirm password</label>
+          <input type="password" id="confirm" placeholder="Re-enter password" autocomplete="new-password" required />
+          <span class="field-error">Passwords do not match.</span>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block" id="register-submit">Create account</button>
+      </form>
+
+      <div class="form-footer-link">
+        Already have an account? <a href="index.html">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-register.js"></script>
+</body>
+</html>

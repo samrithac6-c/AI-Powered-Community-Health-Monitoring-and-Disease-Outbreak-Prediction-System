@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emergency Assistance · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="topbar" id="app-nav"></header>
+
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Emergency Assistance</span>
+        <h1>Get help quickly</h1>
+        <p>Emergency numbers, nearby hospitals, and first-aid basics — available whenever you need them.</p>
+      </div>
+    </div>
+
+    <div class="grid grid--3" style="margin-bottom:24px;">
+      <div class="card">
+        <h3 style="font-size:0.95rem;">Ambulance</h3>
+        <div class="stat-card__value mono" style="font-size:1.6rem;">108</div>
+        <p style="font-size:0.85rem;">Free 24/7 emergency ambulance service (India).</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.95rem;">National Emergency Number</h3>
+        <div class="stat-card__value mono" style="font-size:1.6rem;">112</div>
+        <p style="font-size:0.85rem;">Police, fire, and medical emergencies.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.95rem;">Health Helpline</h3>
+        <div class="stat-card__value mono" style="font-size:1.6rem;">1075</div>
+        <p style="font-size:0.85rem;">COVID-19 / public health advisory helpline.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Nearby hospitals (sample list)</h3>
+        <p style="font-size:0.85rem;">In a production build, this list would be generated from the user's live location via a maps API. For this demo, a representative list is shown.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Hospital</th><th>Type</th><th>Contact</th></tr></thead>
+            <tbody id="hospital-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>First-aid guidelines</h3>
+        <ul class="helper-list" id="first-aid-list"></ul>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-emergency.js"></script>
+</body>
+</html>

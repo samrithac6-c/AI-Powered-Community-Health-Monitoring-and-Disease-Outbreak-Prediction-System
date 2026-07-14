@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Overview · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="topbar" id="app-nav"></header>
+
+  <main class="page" style="max-width:1280px;">
+    <div class="page-header">
+      <div>
+        <span class="eyebrow">Admin Overview</span>
+        <h1>Community health analytics</h1>
+        <p>Monitor submissions, risk levels, and outbreak signals across your community.</p>
+      </div>
+    </div>
+
+    <div id="alerts-slot" style="margin-bottom:8px;"></div>
+
+    <div class="grid grid--stats" style="margin-bottom:24px;" id="admin-stats"></div>
+
+    <div class="grid grid--3" style="margin-bottom:24px;">
+      <div class="card">
+        <h3 style="font-size:0.95rem;">Risk distribution</h3>
+        <canvas id="riskChart" height="220"></canvas>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.95rem;">Top reported symptoms</h3>
+        <canvas id="symptomChart" height="220"></canvas>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.95rem;">Weekly submission trend</h3>
+        <canvas id="trendChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="page-header" style="margin-bottom:14px;">
+        <h3 style="margin:0;">Outbreak alerts</h3>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Location</th><th>Cluster</th><th>Cases</th><th>Level</th><th>Status</th><th></th></tr></thead>
+          <tbody id="alerts-tbody"></tbody>
+        </table>
+      </div>
+      <div id="alerts-empty" class="empty-state" style="display:none;">
+        <div class="empty-state__icon">✅</div>
+        <p>No active outbreak signals detected right now.</p>
+      </div>
+    </div>
+
+    <div class="grid grid--2" style="align-items:start;">
+      <div class="card">
+        <div class="page-header" style="margin-bottom:14px;">
+          <h3 style="margin:0;">All users</h3>
+        </div>
+        <input type="text" id="user-search" placeholder="Search users by name or email..." style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; margin-bottom:14px;" />
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Reports</th></tr></thead>
+            <tbody id="users-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="page-header" style="margin-bottom:14px;">
+          <h3 style="margin:0;">All reports</h3>
+        </div>
+        <input type="text" id="report-search" placeholder="Search reports by name or location..." style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; margin-bottom:14px;" />
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Name</th><th>Location</th><th>Risk</th><th></th></tr></thead>
+            <tbody id="reports-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/outbreak.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-admin.js"></script>
+</body>
+</html>
