@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign In · CommunityHealth AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-shell__aside">
+    <div class="brand-lockup">
+      <svg width="34" height="20" viewBox="0 0 120 24" style="color:#6FD9CE"><polyline points="0,12 20,12 28,2 36,22 44,12 120,12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      CommunityHealth<strong>AI</strong>
+    </div>
+
+    <div>
+      <div class="aside-pulse">
+        <svg viewBox="0 0 400 90" preserveAspectRatio="none">
+          <polyline points="0,45 60,45 80,10 100,80 120,45 180,45 200,20 220,70 240,45 400,45" />
+        </svg>
+      </div>
+      <p class="aside-quote">Every daily check-in is a heartbeat in your community's health record — together they reveal outbreaks before they spread.</p>
+    </div>
+
+    <div class="aside-foot">
+      Rule-based AI risk scoring · Outbreak early-warning · Built for public health teams
+    </div>
+  </aside>
+
+  <div class="auth-shell__form">
+    <div class="auth-card">
+      <span class="eyebrow">Welcome back</span>
+      <h1>Sign in to your account</h1>
+      <p>Track your daily health, and help your community spot outbreaks early.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field" id="field-email">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <span class="field-error">Enter a valid email address.</span>
+        </div>
+
+        <div class="field" id="field-password">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+          <span class="field-error">Enter your password.</span>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block" id="login-submit">Sign in</button>
+      </form>
+
+      <div class="form-footer-link">
+        Don't have an account? <a href="register.html">Create one</a>
+      </div>
+
+      <div class="card" style="margin-top:24px; background:var(--surface-alt); border:none;">
+        <strong style="font-size:0.82rem;color:var(--teal-900);">Demo credentials</strong>
+        <p style="margin:8px 0 0;font-size:0.82rem;">
+          Citizen: <span class="mono">demo@healthai.com</span> / <span class="mono">Demo@123</span><br />
+          Admin: <span class="mono">admin@healthai.com</span> / <span class="mono">Admin@123</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/prediction.js"></script>
+<script src="js/db.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/page-login.js"></script>
+</body>
+</html>
