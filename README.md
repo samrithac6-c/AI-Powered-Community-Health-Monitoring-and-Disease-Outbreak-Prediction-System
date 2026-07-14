@@ -1,0 +1,2 @@
+# AI-Powered-Community-Health-Monitoring-and-Disease-Outbreak-Prediction-System
+AI-Powered Community Health Monitoring and Disease Outbreak Prediction System is a web application that collects daily health data, predicts user health risk using AI-based logic, detects possible disease outbreaks, and provides real-time alerts, analytics dashboards, and health insights for early intervention and community healthcare management.
